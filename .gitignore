@@ -1,0 +1,51 @@
+# ── 🔐 SECRETS — never commit these ─────────────────────────────────────────
+client_secret.json
+credentials.json
+token.json
+*.pem
+*.key
+.env
+.env.local
+.env.development
+.env.production
+
+# ── 🐍 Python / Django ────────────────────────────────────────────────────────
+mailsentinel_backend/venv/
+mailsentinel_backend/__pycache__/
+mailsentinel_backend/**/__pycache__/
+mailsentinel_backend/**/*.pyc
+mailsentinel_backend/**/*.pyo
+mailsentinel_backend/**/*.pyd
+mailsentinel_backend/.Python
+mailsentinel_backend/*.egg-info/
+mailsentinel_backend/dist/
+mailsentinel_backend/.eggs/
+mailsentinel_backend/db.sqlite3
+mailsentinel_backend/media/
+
+# ── ⚛️ React / Node ───────────────────────────────────────────────────────────
+mailsentinel_frontend/node_modules/
+mailsentinel_frontend/build/
+mailsentinel_frontend/.pnp
+mailsentinel_frontend/.pnp.js
+mailsentinel_frontend/coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── 🖥️ OS Files ───────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+Desktop.ini
+*~
+
+# ── 🛠️ IDE / Editor ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,136 @@
+
+
+.ds-scan-log {
+  margin: 18px 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.1);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+}
+
+.ds-scan-log-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a1a2e;
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.ds-scan-log-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.ds-dot-yellow { background: #f59e0b; }
+.ds-dot-green  { background: #10b981; }
+
+.ds-scan-log-title {
+  margin-left: 10px;
+  font-size: 0.72rem;
+  color: #64748b;
+  letter-spacing: 0.04em;
+}
+
+.ds-scan-log-body {
+  background: #0d1117;
+  padding: 12px 16px 14px;
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ds-scan-log-body::-webkit-scrollbar { width: 4px; }
+.ds-scan-log-body::-webkit-scrollbar-track { background: transparent; }
+.ds-scan-log-body::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 2px; }
+
+.ds-log-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  animation: logSlideIn 0.2s ease both;
+}
+
+@keyframes logSlideIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.ds-log-ts {
+  color: #374151;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  padding-top: 1px;
+  user-select: none;
+}
+
+.ds-log-text {
+  color: #94a3b8;
+  word-break: break-word;
+}
+
+.ds-log-pass .ds-log-text  { color: #34d399; }
+.ds-log-fail .ds-log-text  { color: #f87171; }
+.ds-log-warn .ds-log-text  { color: #fbbf24; }
+.ds-log-info .ds-log-text  { color: #818cf8; }
+
+.ds-log-verdict {
+  margin-top: 6px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+}
+.ds-log-verdict .ds-log-text {
+  color: #e2e8f0;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.ds-log-cursor {
+  color: #6366f1;
+  font-size: 0.85rem;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+.ds-spam-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.ds-btn-mark-spam,
+.ds-btn-restore {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.ds-btn-mark-spam {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.3);
+}
+.ds-btn-restore {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16,185,129,0.3);
+}
+.ds-btn-mark-spam:hover { opacity: 0.85; transform: translateY(-1px); }
+.ds-btn-restore:hover   { opacity: 0.85; transform: translateY(-1px); }
+.ds-btn-mark-spam:disabled,
+.ds-btn-restore:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
